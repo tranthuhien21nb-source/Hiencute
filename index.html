@@ -1,66 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>�ang k� �n m�n thi</title>
+    <meta charset="UTF-8">
+    <title>Bảng Đăng Ký Môn Thi THPT</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
         table {
+            width: 60%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         th, td {
-            border: 1px solid black;
+            border: 1px solid #333;
             padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #333;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
         }
     </style>
 </head>
 <body>
-    <h2>�ang k� �n m�n thi</h2>
-    <form id="dangKyForm">
-        <table id="dangKyTable">
-            <tr>
-                <th>M�n h?c</th>
-                <th>H?c bu?i</th>
-                <th><button type="button" onclick="themMonHoc()">+</button></th>
-            </tr>
-            <tr>
-                <td>
-                    <select name="monHoc[]">
-                        <option value="To�n">To�n</option>
-                        <option value="L�">L�</option>
-                        <option value="H�a">H�a</option>
-                        <option value="Sinh">Sinh</option>
-                        <option value="Anh Van">Anh Van</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="hocBuoi[]">
-                        <option value="S�ng">S�ng</option>
-                        <option value="Chi?u">Chi?u</option>
-                        <option value="T?i">T?i</option>
-                    </select>
-                </td>
-                <td><button type="button" onclick="xoaMonHoc(this)">-</button></td>
-            </tr>
-        </table>
-        <br>
-        <input type="submit" value="�ang k�">
-    </form>
 
-    <script>
-        function themMonHoc() {
-            var table = document.getElementById("dangKyTable");
-            var row = table.insertRow(table.rows.length);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            cell1.innerHTML = '<select name="monHoc[]"><option value="To�n">To�n</option><option value="L�">L�</option><option value="H�a">H�a</option><option value="Sinh">Sinh</option><option value="Anh Van">Anh Van</option></select>';
-            cell2.innerHTML = '<select name="hocBuoi[]"><option value="S�ng">S�ng</option><option value="Chi?u">Chi?u</option><option value="T?i">T?i</option></select>';
-            cell3.innerHTML = '<button type="button" onclick="xoaMonHoc(this)">-</button>';
-        }
+<h2>Phiếu Đăng Ký Môn Thi THPT Quốc Gia</h2>
 
-        function xoaMonHoc(btn) {
-            var row = btn.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-    </script>
+<form>
+    <label>Họ và tên: </label>
+    <input type="text" name="fullname" required><br><br>
+
+    <label>Số báo danh: </label>
+    <input type="text" name="sbd" required><br><br>
+
+    <table>
+        <tr>
+            <th>Chọn</th>
+            <th>Môn thi</th>
+            <th>Bắt buộc / Tự chọn</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Toán"></td>
+            <td>Toán</td>
+            <td>Bắt buộc</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Ngữ văn"></td>
+            <td>Ngữ văn</td>
+            <td>Bắt buộc</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Ngoại ngữ"></td>
+            <td>Ngoại ngữ</td>
+            <td>Bắt buộc</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Vật lý"></td>
+            <td>Vật lý</td>
+            <td>Tự chọn</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Hóa học"></td>
+            <td>Hóa học</td>
+            <td>Tự chọn</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Sinh học"></td>
+            <td>Sinh học</td>
+            <td>Tự chọn</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Lịch sử"></td>
+            <td>Lịch sử</td>
+            <td>Tự chọn</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="Địa lý"></td>
+            <td>Địa lý</td>
+            <td>Tự chọn</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="subject" value="GDCD"></td>
+            <td>Giáo dục công dân</td>
+            <td>Tự chọn</td>
+        </tr>
+    </table>
+
+    <button type="submit">Gửi đăng ký</button>
+</form>
+
 </body>
 </html>
